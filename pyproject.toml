@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "visualization-lab"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pillow", "moviepy", "pyyaml", "pandas"]
+
+[project.optional-dependencies]
+dev = ["ruff", "black", "pytest", "mypy", "types-PyYAML"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vizlab", "src/intent_engine"]
+
